@@ -1,62 +1,68 @@
 # Bevezetés a NodeJS + MSSql konfigárcióba | C8EFD
 
-## SQL Server 2022 Express - BASIC Telepítés (HA MÉG NINCS TELEPÍTVE)
+> [!NOTE] 
+> **SQL Server 2022 Express - BASIC Telepítés (HA MÉG NINCS TELEPÍTVE)**
 
-## 1. Letöltés
+> [!CAUTION]
+> **Ha jelszóra van szükséged, kérlek mindenképp kérd a `TANÁR ÚR SEGÍTSÉGÉT`!!!**
 
-Töltsd le: https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x40e&culture=hu-hu&country=hu
+> 1. Letöltés
 
-## 2. Telepítő futtatása
+    [Telepítő letöltése](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x40e&culture=hu-hu&country=hu)
 
-Futtasd a letöltött `SQLServer2022-SSEI-Expr.exe` fájlt.
+> 2. Telepítő futtatása
 
-## 3. Válaszd a "Basic" opciót
+    Futtasd a letöltött `SQLServer2022-SSEI-Expr.exe` fájlt.
 
-A telepítő három lehetőséget kínál
+> 3. Válaszd a "Basic" opciót
 
-- **Basic** ← Ezt válaszd!
+> A telepítő három lehetőséget kínál
+
+    - **Basic** ← Ezt válaszd!
+        
+    - Custom
+        
+    - Download Media
     
-- Custom
-    
-- Download Media
-    
 
-Kattints a **Basic** gombra​
+> Kattints a **Basic** gombra​
 
-## 4. Licenc elfogadása
+> 4. Licenc elfogadása
 
-Olvasd el és fogadd el a licencfeltételeket az **Accept** gombbal​
+    Olvasd el és fogadd el a licencfeltételeket az **Accept** gombbal​
 
-## 5. Telepítési hely
+> 5. Telepítési hely
 
-Hagyd az alapértelmezett értéket, és kattints az **Install** gombra Nem kell semmilyen függőség!!!! Csak simán az INSTALL GOMB!!!!!​
-​ 
+    Hagyd az alapértelmezett értéket, és kattints az **Install** gombra Nem kell semmilyen függőség!!!! Csak simán az INSTALL GOMB!!!!!​
 ---
 ##  RÉSZ 1: SQL SERVER ALAPBEÁLLÍTÁSOK
 
+> [!WARNING]
+> **Fontos, hogy ezt a telepítéstől függetlenül el kell végezni!**
+
 ### Lépés 1: TCP/IP Protokoll Engedélyezése
 
-1. Nyomd meg: **Win + R**
-2. Írd be: `SQLServerManager16.msc`
-3. Kattints **OK**
-4. Bal oldalon: **SQL Server Network Configuration** → **Protocols for SQLEXPRESS**
-5. Jobb oldalon: **Jobb klikk a TCP/IP-n** → **Enable**
-6. Egy figyelmeztetés ablak jön → kattints **OK**
+    1. Nyomd meg: **Win + R**
+    2. Írd be: `SQLServerManager16.msc`
+    3. Kattints **OK**
+    4. Bal oldalon: **SQL Server Network Configuration** → **Protocols for SQLEXPRESS**
+    5. Jobb oldalon: **Jobb klikk a TCP/IP-n** → **Enable**
+    6. Egy figyelmeztetés ablak jön → kattints **OK**
 
 ### Lépés 2: Statikus Port Beállítása (1433)
 
-1. Ugyanott: **Jobb klikk a TCP/IP-n** → **Properties**
-2. Menj az **IP Addresses** fülre
-3. Görgess le egészen legalulra az **IPAll** szekcióhoz
-4. **TCP Dynamic Ports**: Töröld ki a számot (maradjon üres)
-5. **TCP Port**: Írd be: `1433`
-6. Kattints **OK**
+    1. Ugyanott: **Jobb klikk a TCP/IP-n** → **Properties**
+    2. Menj az **IP Addresses** fülre
+    3. Görgess le egészen legalulra az **IPAll** szekcióhoz
+    4. **TCP Dynamic Ports**: Töröld ki a számot (maradjon üres)
+    5. **TCP Port**: Írd be: `1433`
+    6. Kattints **OK**
 
 ###  Lépés 3: SQL Server Újraindítása
 
-1. Bal oldalon: **SQL Server Services**
-2. Jobb oldalon: **SQL Server (SQLEXPRESS)** → **Jobb klikk** → **Restart**
-3. Várj, amíg a Status **Running** lesz
+    1. Bal oldalon: **SQL Server Services**
+    2. Jobb oldalon: **SQL Server (SQLEXPRESS)** → **Jobb klikk** → **Restart**
+    3. Várj, amíg a Status **Running** lesz
 
 ***
 
@@ -64,11 +70,11 @@ Hagyd az alapértelmezett értéket, és kattints az **Install** gombra Nem kell
 
 ###  Lépés 4: SQL Server Management Studio (SSMS) Megnyitása
 
-1. Start menü → Keresd: **Microsoft SQL Server Management Studio**
-2. **Connect to Server** ablakban:
-    - **Server name**: `localhost\SQLEXPRESS`
-    - **Authentication**: `Windows Authentication`
-    - Kattints **Connect**
+    1. Start menü → Keresd: **Microsoft SQL Server Management Studio**
+    2. **Connect to Server** ablakban:
+        - **Server name**: `localhost\SQLEXPRESS`
+        - **Authentication**: `Windows Authentication`
+        - Kattints **Connect**
 
 ###  Lépés 5: SQL Felhasználó Létrehozása
 
