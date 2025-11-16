@@ -18,7 +18,7 @@
 
 > A telepítő három lehetőséget kínál
 
-    - **Basic** ← Ezt válaszd!
+    - Basic ← Ezt válaszd!
         
     - Custom
         
