@@ -12,28 +12,28 @@
 
 > 2. Telepítő futtatása
 
-    Futtasd a letöltött `SQLServer2022-SSEI-Expr.exe` fájlt.
+    Futtasd a letöltött SQLServer2022-SSEI-Expr.exe fájlt.
 
 > 3. Válaszd a "Basic" opciót
 
 > A telepítő három lehetőséget kínál
 
-    - Basic ← Ezt válaszd!
-        
-    - Custom
-        
-    - Download Media
+ - Basic ← Ezt válaszd!
+     
+ - Custom
+     
+ - Download Media
     
 
 > Kattints a **Basic** gombra​
 
 > 4. Licenc elfogadása
 
-    Olvasd el és fogadd el a licencfeltételeket az **Accept** gombbal​
+    Olvasd el és fogadd el a licencfeltételeket az Accept gombbal​
 
 > 5. Telepítési hely
 
-    Hagyd az alapértelmezett értéket, és kattints az **Install** gombra Nem kell semmilyen függőség!!!! Csak simán az INSTALL GOMB!!!!!​
+    Hagyd az alapértelmezett értéket, és kattints az Install gombra Nem kell semmilyen függőség!!!! Csak simán az INSTALL GOMB!!!!!​
 ---
 ##  RÉSZ 1: SQL SERVER ALAPBEÁLLÍTÁSOK
 
