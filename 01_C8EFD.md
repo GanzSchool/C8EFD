@@ -8,7 +8,7 @@
 
 > 1. Letöltés
 
-    [Telepítő letöltése](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x40e&culture=hu-hu&country=hu)
+   [Telepítő letöltése](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x40e&culture=hu-hu&country=hu)
 
 > 2. Telepítő futtatása
 
