@@ -97,6 +97,40 @@ sql.connect(config)
 
 Mentsd el: **Ctrl + S**
 
+### Dinamikus porttal 
+
+```js
+const sql = require('mssql');
+
+const config = {
+    user: 'admin',
+    password: '1234',
+    server: 'localhost',
+    // port: 1433,  // Töröld vagy kommentezd ki a statikus portot!
+    database: 'KonyvtarDB',
+    options: {
+        encrypt: false,
+        trustServerCertificate: true,
+        instanceName: 'SQLEXPRESS'  // Add meg az instance neved itt!
+    }
+};
+
+console.log('Próbálok csatlakozni dinamikus porttal...');
+
+sql.connect(config)
+    .then(() => {
+        console.log('✓ SIKERES KAPCSOLAT!');
+        console.log('Az adatbázis elérhető dinamikus porton keresztül.');
+        console.log('Lépj át a következő szintre HARCOS!');
+        process.exit(0);
+    })
+    .catch(err => {
+        console.log('✗ HIBA!');
+        console.log('Hibaüzenet:', err.message);
+        process.exit(1);
+    });
+```
+
 ###  Lépés 6: Futtatás
 
 ```powershell
