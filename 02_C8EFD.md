@@ -67,16 +67,16 @@ Másold be ezt a `test.js` fájlba:
 ```javascript
 const sql = require('mssql');
 
+
 const config = {
-    user: 'admin',
-    password: '1234',
-    server: 'localhost',
-    port: 1433,
-    database: 'KonyvtarDB',
-    options: {
-        encrypt: false,
-        trustServerCertificate: true
-    }
+  user: 'felhasználónév',
+  password: 'jelszó',
+  server: 'localhost',   
+  database: 'KonyvtarDB',
+  options: {
+    encrypt: false,
+    trustServerCertificate: true,
+  }
 };
 
 console.log('Próbálok csatlakozni...');
@@ -95,83 +95,7 @@ sql.connect(config)
     });
 ```
 
-Mentsd el: **Ctrl + S**
 
-### Dinamikus porttal 
-
-```js
-// ============================================
-// 1. CSOMAGOK IMPORTÁLÁSA
-// ============================================
-const express = require('express');
-const sql = require('mssql');
-
-
-// ============================================
-// 2. ALKALMAZÁS LÉTREHOZÁSA
-// ============================================
-const app = express();
-const port = 3000;
-
-
-// ============================================
-// 3. ADATBÁZIS KONFIGURÁCIÓ
-// ============================================
-const config = {
-    user: 'sa',
-    password: 'alma',
-    server: 'localhost',
-    database: 'KonyvtarDB',
-    options: {
-        encrypt: false,
-        trustServerCertificate: true
-    }
-};
-
-
-// ============================================
-// 4. CONNECTION POOL TÁROLÁSA
-// ============================================
-
-// A pool célja a teljesítmény optimalizálása: nem kell minden kérésnél új kapcsolatot létrehozni és lezárni, hanem újrahasználjuk a meglévőket.
-let pool;
-
-
-// ============================================
-// 5. ADATBÁZIS CSATLAKOZÁS
-// ============================================
-sql.connect(config)
-    .then(p => {
-        pool = p;
-        console.log('✓ Adatbázis kapcsolat létrejött');
-        
-        // Szerver indítása csak kapcsolat után
-        startServer();
-    })
-    .catch(err => {
-        console.log('✗ Kapcsolódási hiba:', err.message);
-    });
-
-
-// ============================================
-// 6. API ENDPOINT - Összes könyv lekérdezése
-// ============================================
-app.get('/api/konyvek', async (req, res) => {
-    const result = await pool.request().query('SELECT * FROM Konyvek');
-    res.json(result.recordset);
-});
-
-
-// ============================================
-// 7. SZERVER INDÍTÁSA
-// ============================================
-function startServer() {
-    app.listen(port, () => {
-        console.log('✓ Szerver fut: http://localhost:' + port);
-        console.log('✓ Endpoint: http://localhost:' + port + '/api/konyvek');
-    });
-}
-```
 
 ###  Lépés 6: Futtatás
 
