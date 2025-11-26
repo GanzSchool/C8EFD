@@ -93,15 +93,14 @@ const port = 3000;
 // 3. ADATBÁZIS KONFIGURÁCIÓ
 // ============================================
 const config = {
-    user: 'admin',
-    password: '1234',
-    server: 'localhost',
-    port: 1433,
-    database: 'KonyvtarDB',
-    options: {
-        encrypt: false,
-        trustServerCertificate: true
-    }
+  user: 'sa',
+  password: 'alma',
+  server: 'localhost',   
+  database: 'KonyvtarDB',
+  options: {
+    encrypt: false,
+    trustServerCertificate: true,
+  }
 };
 
 
